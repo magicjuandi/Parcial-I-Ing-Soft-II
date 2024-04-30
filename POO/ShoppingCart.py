@@ -1,5 +1,7 @@
 from abc import ABC
-
+import Payment
+import User
+import Product
 
 class ShoppingCart(ABC):
 
@@ -11,6 +13,8 @@ class ShoppingCart(ABC):
     def remove(self, product):
         self.items = [item for item in self.items if item['product'] != product]
 
-    def checkout(self):
-        total_price = sum(item['product'].price * item['quantity'] for item in self.items)
+    def checkout(self,product : Product):
+        total_price = product.price
         return total_price
+    
+    

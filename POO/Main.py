@@ -1,21 +1,21 @@
-import UserService
-import ShoppingCart
+import PersonaService
+import Process
 import PaymentService
-import User
+import Persona
 import Payment
 import Product
 
 def main():
-    shoppingCart = ShoppingCart.ShoppingCart()
-    userService = UserService.UserService()
+    process = Process.Process()
+    personaService = PersonaService.PersonaService()
     paymentService = PaymentService.PaymentService()
     
 
     while True:
-        user = User.User("Pacho","78132","pacho@email.com")
-        product = Product.Product("ProductoPredeterminado", 1)
-        shoppingCart.add(product)
-        userService.Add(user)
+        persona = Persona.Persona("Juana","123812","juana@mail.com")
+        product = Product.Product("Producto1", 213)
+        process.add(product)
+        personaService.Add(persona)
         print("\nOptions:")
         print("1. Add Product")
         print("2. Remove Product")
@@ -29,24 +29,24 @@ def main():
             name = input("Name: ")
             price = input("Price: ")
             product2 = Product.Product(name,price)
-            shoppingCart.add(product2)
+            process.add(product2)
 
         elif choice == '2':
-            shoppingCart.remove(product2)
+            process.remove(product2)
 
         elif choice == '3':
             id = 0
             name = input("Name: ")
             phone = input("Phone: ")
             email = input("Email: ")
-            user2 = User.User(name,phone,email)
-            userService.edit(id,user2)
+            persona2 = Persona.Persona(name,phone,email)
+            personaService.edit(id,persona2)
 
         elif choice == '4':
-            print(f"Your total price is: {shoppingCart.checkout(product)}")
+            print(f"Your total price is: {process.checkout(product)}")
 
         elif choice == '5':
-            payment = Payment.Payment(user,product,shoppingCart.checkout(product))
+            payment = Payment.Payment(persona,product,process.checkout(product))
             paymentService.pay(payment)
 
         elif choice == '6':

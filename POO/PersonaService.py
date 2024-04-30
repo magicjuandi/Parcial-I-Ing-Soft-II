@@ -1,14 +1,14 @@
-import User
+import Persona
 
-class UserService:
+class PersonaService:
     def __init__(self):
-        self.user = []
+        self.persona = []
 
-    def edit(self, id: int,new_user: User):
-        self.user[id] = new_user
+    def edit(self, id: int,new_user: Persona):
+        self.persona[id] = new_user
 
     def List(self):
-        for i, user in enumerate(self.user):
-            print(f"User {i}: {user.name}, {user.phone}, {user.email}")
-    def Add(self, user: User):
-        self.user.append(user)
+        for i, persona in enumerate(self.persona):
+            print(f"User {i}: {persona.name}, {persona.phone}, {persona.email}")
+    def Add(self, persona: Persona):
+        self.persona.append(persona)

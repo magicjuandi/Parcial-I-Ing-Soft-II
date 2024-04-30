@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 
-class IShoppingCart(metaclass=ABCMeta):
+class IProcess(metaclass=ABCMeta):
     @abstractmethod
     def add(self):
         pass

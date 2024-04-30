@@ -1,9 +1,9 @@
 from abc import ABC
 import Payment
-import User
+import Persona
 import Product
 
-class ShoppingCart(ABC):
+class Process(ABC):
 
     def __init__(self):self.items = []
 
